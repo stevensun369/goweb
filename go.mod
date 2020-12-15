@@ -1,4 +1,4 @@
-module go-img-upload
+module goweb
 
 go 1.15
 
