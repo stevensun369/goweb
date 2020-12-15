@@ -5,6 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/django"
 	"fmt"
+	"log"
 )
 
 func main() {
@@ -51,5 +52,7 @@ func main() {
 			"filename": filename,
 		})
 	})
+
+	log.Fatal(app.Listen(":9990"))
 		
 }
