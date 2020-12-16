@@ -2,17 +2,13 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/template/django"
 	"fmt"
 	"log"
 )
 
 func main() {
-	engine := django.New("./views", ".html")
 
-	app := fiber.New(fiber.Config{
-		Views: engine,
-	})
+	app := fiber.New(fiber.Config{})
 	
 	app.Static("/media", "./media")
 
