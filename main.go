@@ -1,7 +1,6 @@
 package main
 
 import (
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/django"
 	"fmt"
@@ -11,8 +10,6 @@ import (
 func main() {
 	engine := django.New("./views", ".html")
 
-	
-	
 	app := fiber.New(fiber.Config{
 		Views: engine,
 	})
@@ -40,19 +37,10 @@ func main() {
 		filename := c.Params("filename")
 
 		return c.Render("kard", fiber.Map{
-				"filename": filename,
-		})
-
-	})
-
-	app.Get("/kard/:filename", func (c *fiber.Ctx) error {
-		filename := c.Params("filename")
-
-		return c.Render("kard", fiber.Map{
 			"filename": filename,
 		})
+
 	})
 
 	log.Fatal(app.Listen(":9990"))
-		
 }
